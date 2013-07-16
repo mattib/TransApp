@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trans App</string>
+    <string name="menu_settings">הגדרות</string>
+    <string name="login_username">שם משתמש:</string>
+    <string name="login_password">סיסמא:</string>
+    <string name="login_login_submit">התחבר</string>
+    <string name="test">בדיקה!!!</string>
+    <string name="title_activity_task_view">Trans App</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_task_details">פרטי המשלוח</string>
+    <string name="login_error_No_UserName">הזן שם משתמש</string>
+    <string name="login_error_No_Password">הזן סיסמא</string>
+    <string name="login_error_User_or_password_incorrect">שם המשתמש או הסיסמא שגויים</string>
+    <string name="task_comment">הערה</string>
+    <string name="task_finish_submit">סיים משימה</string>
+    <string name="task_name">שם המשימה</string>
+    <string name="task_start_submit">התחל משלוח</string>
+</resources>

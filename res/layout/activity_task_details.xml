@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:fillViewport="true">
+
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:background="#ffffff">
+
+		<LinearLayout android:id="@+id/taskDetailsLayout"
+			android:layout_width="match_parent" android:layout_height="wrap_content"
+			android:orientation="vertical" android:padding="10dip">
+
+			<TextView android:id="@+id/taskName" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:text="@string/task_name"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textColor="#800E4E" />
+
+			<TextView android:id="@+id/deliveryNumber"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:text="deliveryNumber" android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="#0E3880" />
+
+			<TextView android:id="@+id/senderAddress"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:text="senderAddress" android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="#0E3880" />
+
+			<TextView android:id="@+id/reciverAddress"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:text="reciverAddress" android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="#0E3880" />
+
+			<TextView android:id="@+id/pickupTime" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:text="pickupTime"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="#0E3880" />
+
+			<TextView android:id="@+id/deliveryTime"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:text="deliveryTime" android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="#0E3880" />
+
+			<TextView android:id="@+id/taskStatus" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="taskStatus"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="#0E3880" />
+
+			<Button android:id="@+id/startTaskButton"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_marginTop="10dip" android:text="@string/task_start_submit"
+				android:onClick="start" />
+
+			<TableLayout android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<TableRow android:id="@+id/buttonTableRow"
+					android:layout_width="fill_parent" android:layout_height="wrap_content"
+					android:gravity="center_horizontal">
+
+					<Button android:id="@+id/acceptButton" android:layout_width="fill_parent"
+						android:layout_height="wrap_content" android:layout_column="1"
+						android:layout_gravity="left" android:gravity="left|fill_vertical|fill_horizontal"
+						android:onClick="accept" android:text="Accept Delivery" />
+
+					<Button android:id="@+id/rejectButton" android:layout_width="fill_parent"
+						android:layout_height="wrap_content" android:layout_column="2"
+						android:layout_gravity="right" android:gravity="right|fill_vertical|fill_horizontal"
+						android:nextFocusDown="@id/taskDetailsLayout" android:onClick="reject"
+						android:text="Reject Delivery" />
+
+				</TableRow>
+			</TableLayout>
+		</LinearLayout>
+
+		<LinearLayout android:id="@+id/taskFinishLayout"
+			android:layout_width="match_parent" android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true" android:layout_below="@+id/taskDetailsLayout"
+			android:orientation="vertical" android:padding="10dip">
+
+			<TextView android:id="@+id/reject" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="reject delivery ?"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="#0E3880" />
+
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:text="@string/task_comment"
+				android:textColor="#372c24" />
+
+			<EditText android:id="@+id/text_comment_textbox"
+				android:layout_width="fill_parent" android:layout_height="0dip"
+				android:layout_marginBottom="20dip" android:layout_marginTop="5dip"
+				android:layout_weight="0.44" android:ems="10" android:inputType="text|textMultiLine|none"
+				android:selectAllOnFocus="true" />
+
+			<TableLayout android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<TableRow android:id="@+id/imagesTableRow"
+					android:layout_width="fill_parent" android:layout_height="wrap_content"
+					android:gravity="center_horizontal">
+
+					<!-- <Button android:id="@+id/pictureButton" android:layout_width="wrap_content" 
+						android:layout_height="wrap_content" android:layout_gravity="left" android:gravity="left|fill_vertical|fill_horizontal" 
+						android:onClick="takePic" android:text="Image" /> -->
+					<Button android:id="@+id/takePictureButton"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_centerHorizontal="true"
+						android:layout_centerVertical="true" android:text="Take Photo" />
+					<!-- <Button android:text="Sign Delivery" android:id="@+id/signature"
+						android:layout_width="wrap_content" android:layout_height="wrap_content" /> -->
+					<Button android:id="@+id/takeSignatureButton"
+						android:layout_height="wrap_content" android:layout_column="2"
+						android:layout_gravity="right" android:gravity="right|fill_vertical|fill_horizontal"
+						android:nextFocusDown="@id/taskDetailsLayout" android:text="Sign Delivery" />
+
+				</TableRow>
+			</TableLayout>
+
+			<TextView android:id="@+id/pickupAt" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:text="pickupAt"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="#0E3880" />
+
+			<TextView android:id="@+id/deliveryAt" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:text="deliveryAt"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="#0E3880" />
+
+			<Button android:id="@+id/finishTaskButton"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_marginTop="10dip" android:text="@string/task_finish_submit"
+				android:onClick="finish" />
+		</LinearLayout>
+	</RelativeLayout>
+
+</ScrollView>

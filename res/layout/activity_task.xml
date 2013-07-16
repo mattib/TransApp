@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/taskName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Delivery Company"
+        android:text="Task Name"
+        android:textColor="#800E4E"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+     <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+        android:text="Address"
+        android:textColor="#0E3880"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+     <TextView
+         android:id="@+id/date"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:hint="Delivery Time"
+         android:text="Delivery Time"
+         android:textColor="#0E3880"
+         android:textAppearance="?android:attr/textAppearanceMedium" />
+     
+      <TextView
+         android:id="@+id/status"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:hint="Status"
+         android:text="Status"
+         android:textColor="#0E3880"
+         android:textAppearance="?android:attr/textAppearanceMedium" />
+      
+      <TextView
+         android:id="@+id/deliveryNumber"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:hint="Delivery Number"
+         android:text="Delivery Number"
+         android:textColor="#0E3880"
+         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trans App</string>
+    <string name="menu_settings">settings</string>
+    <string name="login_username">User Name:</string>
+    <string name="login_password">Password:</string>
+    <string name="login_login_submit">logon</string>
+    <string name="test">test!!!</string>
+    <string name="title_activity_task_view">Trans App</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_task_details">delivery details</string>
+    <string name="login_error_No_UserName">Enter user name</string>
+    <string name="login_error_No_Password">Enter password</string>
+    <string name="login_error_User_or_password_incorrect">User Name or Password are incorrent</string>
+    <string name="task_comment">User Comment:</string>
+    <string name="task_finish_submit">End Delivery</string>
+    <string name="task_name">Delivery Name</string>
+    <string name="task_start_submit">Start Delivery</string>
+<!--      <string name="task_name">שם המשימה</string> -->
+    
+    
+</resources>
+<!--  <resources>
+    <string name="app_name">Trans App</string>
+    <string name="menu_settings">Settings</string>
+    <string name="login_username">User Name:</string>
+    <string name="login_password">Password:</string>
+    <string name="login_login_submit">Login</string>
+    <string name="test">Test!!!</string>
+    <string name="title_activity_task_view">Trans App</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_task_details">Shipping details</string>
+    <string name="login_error_No_UserName">User Name Missing</string>
+    <string name="login_error_No_Password">Password Missing</string>
+    <string name="login_error_User_or_password_incorrect">User Name and/or Passord are wrong</string>
+</resources>  -->

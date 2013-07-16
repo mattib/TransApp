@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransWorldData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.transWorld.com">
+  <TaskItems>
+    <TaskItem>
+      <Name>Intel</Name>
+      <PhoneNumber>054-3979567</PhoneNumber>
+      <Address>Heshvan 3 Modiin</Address>
+      <DeliveryDate>2013-02-04T21:41:26.6254751+02:00</DeliveryDate>
+      <DeliveryNumber>123456</DeliveryNumber>
+      <UserId>2</UserId>
+      <CompanyId>1</CompanyId>
+      <Accepted>false</Accepted>
+      <RejectionReason />
+      <Status>0</Status>
+    </TaskItem>
+    <TaskItem>
+      <Name>Intel</Name>
+      <PhoneNumber>054-3979567</PhoneNumber>
+      <Address>Heshvan 3 Modiin</Address>
+      <DeliveryDate>2013-02-04T21:41:26.6254751+02:00</DeliveryDate>
+      <DeliveryNumber>123456</DeliveryNumber>
+      <UserId>2</UserId>
+      <CompanyId>1</CompanyId>
+      <Accepted>false</Accepted>
+      <RejectionReason />
+      <Status>0</Status>
+    </TaskItem>
+  </TaskItems>
+</TransWorldData>
