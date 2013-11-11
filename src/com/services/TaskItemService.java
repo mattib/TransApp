@@ -26,7 +26,7 @@ public class TaskItemService {
 		m_apiAddress = apiAddress;
 	}
 	
-	public ArrayList<TaskItem> GetTasks(int userId)
+	public ArrayList<TaskItem> GetTasks(int userId, Date date)
 	{
 	
 		DownLoadTaskItemsEvent tasks = new DownLoadTaskItemsEvent();
@@ -36,7 +36,7 @@ public class TaskItemService {
 		ArrayList<TaskItem> tasksList = null;
 	
 		try {
-			tasksJSONArray = tasks.execute().get();
+			tasksJSONArray = tasks.execute(userId).get();
 			
 			tasksList = ExtractTasks(tasksJSONArray);
 		} catch (InterruptedException e) {
@@ -149,20 +149,22 @@ public class TaskItemService {
 		return userId;
 	}
 		
-	private JSONArray GetTasksArray() {
+	private JSONArray GetTasksArray(int userId, Date date) {
 		HttpStreamHelper httpStreamHelper = new HttpStreamHelper();
-		InputStream response = httpStreamHelper.getStringFromUrl(m_apiAddress);
+		//api/Task?userId={userId}&lastModified={lastModified}
+		String fullTaskAddress = m_apiAddress + "/" + userId;
+		InputStream response = httpStreamHelper.getStringFromUrl(fullTaskAddress);
 		
 		JsonParser parser = new JsonParser();
 		JSONArray tasks = (JSONArray) parser.getJSONFromString(response);
 		return tasks;
 	}
 	
-	private class DownLoadTaskItemsEvent extends AsyncTask<Void, Void, JSONArray> {
+	private class DownLoadTaskItemsEvent extends AsyncTask<Integer, Void, JSONArray> {
 
 		@Override
-		protected JSONArray doInBackground(Void... params) {
-			JSONArray tasks = GetTasksArray();
+		protected JSONArray doInBackground(Integer... params) {
+			JSONArray tasks = GetTasksArray(params[0], new Date());
 			return tasks;
 		}
 	}

@@ -34,6 +34,7 @@ public class CameraActivity extends Activity {
 		setContentView(R.layout.camera);
 
 		try {
+			
 			Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
 
 			UUID fileName = UUID.randomUUID();

@@ -35,6 +35,15 @@ public class TasksManager {
 	}
 	
 	/**
+	 * loads all Users tasks to database. (Checks if there are updates)
+	 * @param userId
+	 */
+	public void LoadTodaysUsersTasks(int userId)
+	{
+		m_taskEngine.UpdateTaskItems(userId);
+	}
+	
+	/**
 	 * Gets user tasks
 	 * @param userId
 	 * @return TaskItem array
@@ -142,12 +151,17 @@ public class TasksManager {
 	 */
 	public void ImageKeyEvent(int taskId, String imageKey){
 		TaskItem task = m_taskEngine.GetTaskItem(taskId);
-		TaskEvent taskEvent = new TaskEvent();
-		taskEvent.m_taskId = taskId;
-		taskEvent.m_inputType = InputType.ImageId.value();
-		taskEvent.m_userId = task.GetUserId();
-		taskEvent.m_text = imageKey;
-		m_taskEventEngine.UploadTaskEvents(taskEvent);
+		String imageId = task.GetImageId();
+		if(imageId == null || imageId == ""){
+			task.SetImageId(imageKey);
+			m_taskEngine.SaveImageId(task);
+			TaskEvent taskEvent = new TaskEvent();
+			taskEvent.m_taskId = taskId;
+			taskEvent.m_inputType = InputType.ImageId.value();
+			taskEvent.m_userId = task.GetUserId();
+			taskEvent.m_text = imageKey;
+			m_taskEventEngine.UploadTaskEvents(taskEvent);
+		}
 	}
 	
 	/**

@@ -29,11 +29,24 @@ public class TasksEngine {
 	 * UpdateTaskItems - updates the TaskItem's with the userId with TaskItem's in the server
 	 * @param userId
 	 */
+	public void UpdateTaskItems(int userId, Date date)
+	{
+		TaskItemService taskItemService = new TaskItemService(m_tasksServiceAddress);
+		
+		ArrayList<TaskItem> taskList = taskItemService.GetTasks(userId, date);
+		
+		SaveTaskItems(taskList);
+	}
+	
+	/**
+	 * UpdateTaskItems - updates the TaskItem's with the userId with TaskItem's in the server
+	 * @param userId
+	 */
 	public void UpdateTaskItems(int userId)
 	{
 		TaskItemService taskItemService = new TaskItemService(m_tasksServiceAddress);
 		
-		ArrayList<TaskItem> taskList = taskItemService.GetTasks(userId);
+		ArrayList<TaskItem> taskList = taskItemService.GetTasks(userId, new Date());
 		
 		SaveTaskItems(taskList);
 	}
@@ -130,6 +143,14 @@ public class TasksEngine {
 	{
 		task.SetTaskStatus(TaskStatus.Finished);
 		task.SetUserComment(comment);
+		Date now = new Date();
+		task.SetLastModified(now);
+		
+		tasksDbHelper.updateTaskItem(task);
+	}
+	
+	public void SaveImageId(TaskItem task)
+	{
 		Date now = new Date();
 		task.SetLastModified(now);
 		

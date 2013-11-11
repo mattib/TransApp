@@ -61,13 +61,13 @@ public class TasksListAdapter extends ArrayAdapter<TaskItem> {
     		
             String dateString = "";
             Date deliveryTime = task.GetDeliveryTime();
-            if(deliveryTime != null)
-            {
-            	if(taskStatus.value() >= 3)
-                {
-            		deliveryTime = task.GetDeliveredAt();
-                }
-            }
+//            if(deliveryTime != null)
+//            {
+//            	if(taskStatus.value() >= 3)
+//                {
+//            		deliveryTime = task.GetDeliveredAt();
+//                }
+//            }
             if(deliveryTime == null)
             {
             	deliveryTime = new Date();
@@ -78,17 +78,17 @@ public class TasksListAdapter extends ArrayAdapter<TaskItem> {
             
             TextView dateItemView = (TextView) view.findViewById(R.id.date);
             
-            if(taskStatus.value() >= 3)
-            {
-            	if (dateItemView != null) {
-                	dateItemView.setText("זמן מסירה: " + dateString);
-                }
-            }else
-            {
+//            if(taskStatus.value() >= 3)
+//            {
+//            	if (dateItemView != null) {
+//                	dateItemView.setText("זמן מסירה: " + dateString);
+//                }
+//            }else
+//            {
             	if (dateItemView != null) {
                 	dateItemView.setText("זמן יעד מסירה: " + dateString);
                 }
-            }
+//            }
             
             TextView statusItemView = (TextView) view.findViewById(R.id.status);
             if (statusItemView != null) {
